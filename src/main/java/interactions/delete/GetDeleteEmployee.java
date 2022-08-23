@@ -1,4 +1,4 @@
-package interactions.employee;
+package interactions.delete;
 
 import helpers.Constants;
 import helpers.ManagerLog;
@@ -11,21 +11,20 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.serenitybdd.screenplay.rest.interactions.Get;
 import net.thucydides.core.util.EnvironmentVariables;
 
-public class GetAPICorruptEmployee  implements Interaction {
+public class GetDeleteEmployee implements Interaction {
     private EnvironmentVariables environmentVariables;
-    private static final String LOG_CLASE = "GetConsultEmployeeCorrupt -> ";
-    private static final String MENSAJE_GENERAL = "El servicio Corrupto se consumio de forma exitosa";
+    private static final String LOG_CLASE = "GetDeleteEmployee -> ";
+    private static final String MENSAJE_GENERAL = "El servicio se consumio de forma exitosa";
     private final String resources;
 
-    public GetAPICorruptEmployee(String resources) {
+    public GetDeleteEmployee(String resources) {
         this.resources = resources;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         String theRestApiBaseUrl =  EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(Constants.BASE_URL);
-        String theRestApiBaseUrlCorrupt = theRestApiBaseUrl+"v0";
-        actor.whoCan(CallAnApi.at(theRestApiBaseUrlCorrupt));
+        actor.whoCan(CallAnApi.at(theRestApiBaseUrl));
         actor.attemptsTo(
                 Get.resource(resources)
                         .with(requestSpecification -> requestSpecification
@@ -36,11 +35,11 @@ public class GetAPICorruptEmployee  implements Interaction {
         ManagerLog.imprimirMensaje(Constants.SEPARADOR_LINEAL);
         SerenityRest.lastResponse().body().prettyPrint();
         ManagerLog.imprimirMensaje(Constants.SEPARADOR_LINEAL);
-        ManagerLog.imprimirMensaje(theRestApiBaseUrlCorrupt);
+        ManagerLog.imprimirMensaje(theRestApiBaseUrl);
         ManagerLog.imprimirMensaje(Constants.SEPARADOR_LINEAL);
         ManagerLog.imprimirExito(LOG_CLASE+MENSAJE_GENERAL);
     }
-    public static GetAPICorruptEmployee service (String resources){
-        return Tasks.instrumented(GetAPICorruptEmployee.class,resources);
+    public static GetDeleteEmployee service (String resources){
+        return Tasks.instrumented(GetDeleteEmployee.class,resources);
     }
 }

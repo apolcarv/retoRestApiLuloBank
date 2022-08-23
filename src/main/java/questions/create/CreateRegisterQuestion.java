@@ -13,7 +13,7 @@ public class CreateRegisterQuestion implements Question {
     @Override
     public Object answeredBy(Actor actor) {
       actor.should(seeThatResponse(Constants.KEY_STATUS,
-                response -> response.body(Constants.KEY_STATUS, hasItems(Constants.REGYSTER_SUCCESS))));
+                response -> response.body(Constants.KEY_STATUS, hasItems(Constants.SUCCESS))));
         actor.should(seeThatResponse(Constants.KEY_MESSAGE,
                 response -> response.body(Constants.KEY_MESSAGE, hasItems(Constants.REGYSTER_MESSAGE))));
         actor.should(seeThatResponse(Constants.NAME,
@@ -22,8 +22,6 @@ public class CreateRegisterQuestion implements Question {
                 response -> response.body("data.salary", hasItems(DataFaker.generarSalario().get(0)))));
         actor.should(seeThatResponse(Constants.AGE,
                 response -> response.body("data.age", hasItems(DataFaker.generarEdad().get(0)))));
-
-
         return true;
     }
     public static CreateRegisterQuestion registerSucces(){

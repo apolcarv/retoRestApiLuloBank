@@ -1,5 +1,4 @@
-package questions.employee;
-
+package questions.delete;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
@@ -8,7 +7,7 @@ import static helpers.Constants.SUCCESS;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.Matchers.hasItems;
 
-public class ConsultAnEmployeeQuestion implements Question {
+public class DeleteResponseQuestion implements Question {
 
     @Override
     public Object answeredBy(Actor actor) {
@@ -16,7 +15,7 @@ public class ConsultAnEmployeeQuestion implements Question {
                 response -> response.body(KEY_STATUS, hasItems(SUCCESS))));
         return true;
     }
-    public static ConsultAnEmployeeQuestion ConfirRegisterSucces(){
-        return new ConsultAnEmployeeQuestion();
+    public static DeleteResponseQuestion ConfirRegisterDeleted(){
+        return new DeleteResponseQuestion();
     }
 }

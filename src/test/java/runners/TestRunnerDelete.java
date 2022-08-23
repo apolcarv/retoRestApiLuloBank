@@ -5,12 +5,12 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @CucumberOptions(
-        features = {"src/test/resources/feature/employee.feature"},
+        features = {"src/test/resources/feature/delete.feature"},
         glue = "stepDefinitions",
-       /** tags = "@EmployeeSuccessFul",*/
+         tags = "@DeleteEmployeeSuccess",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {"html:target/cucumber-html-report", "json:target/cucumber-json-report.json" }
 )
 @RunWith(CucumberWithSerenity.class)
-public class TestRunnerEmployee {
+public class TestRunnerDelete {
 }

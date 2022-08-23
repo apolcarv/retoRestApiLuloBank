@@ -1,7 +1,8 @@
-package interactions.employee;
+package interactions.delete;
 
 import helpers.Constants;
 import helpers.ManagerLog;
+import interactions.employee.GetAPICorruptEmployee;
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
@@ -11,13 +12,13 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.serenitybdd.screenplay.rest.interactions.Get;
 import net.thucydides.core.util.EnvironmentVariables;
 
-public class GetAPICorruptEmployee  implements Interaction {
+public class GetDeleteEmployeeCorrupt implements Interaction {
     private EnvironmentVariables environmentVariables;
-    private static final String LOG_CLASE = "GetConsultEmployeeCorrupt -> ";
+    private static final String LOG_CLASE = "GetDeleteEmployeeCorrupt -> ";
     private static final String MENSAJE_GENERAL = "El servicio Corrupto se consumio de forma exitosa";
     private final String resources;
 
-    public GetAPICorruptEmployee(String resources) {
+    public GetDeleteEmployeeCorrupt(String resources) {
         this.resources = resources;
     }
 
@@ -40,7 +41,7 @@ public class GetAPICorruptEmployee  implements Interaction {
         ManagerLog.imprimirMensaje(Constants.SEPARADOR_LINEAL);
         ManagerLog.imprimirExito(LOG_CLASE+MENSAJE_GENERAL);
     }
-    public static GetAPICorruptEmployee service (String resources){
-        return Tasks.instrumented(GetAPICorruptEmployee.class,resources);
+    public static GetDeleteEmployeeCorrupt service (String resources){
+        return Tasks.instrumented(GetDeleteEmployeeCorrupt.class,resources);
     }
 }

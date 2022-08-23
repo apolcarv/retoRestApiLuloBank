@@ -1,12 +1,17 @@
 package utils.enums;
 
+import com.github.javafaker.Faker;
+
+import java.util.Locale;
+import java.util.Random;
+
 public enum RestService {
 
     EMPLOYEES("employees"),
     CREATE("create"),
-    EMPLOYEE("employee/1"),
-    DELETE("delete/2"),
-    UPDATE("update/2");
+    EMPLOYEE("employee/"),
+    DELETE("delete/"),
+    UPDATE("update/");
 
     private String uri;
     RestService(String uri) {

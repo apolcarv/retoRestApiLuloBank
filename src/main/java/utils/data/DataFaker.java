@@ -39,4 +39,11 @@ public class DataFaker {
         map.putAll(dataCreate.listMap.get(0));
     }
     public static Map<String, Object> getData(){return map;}
+
+    public static String idEmployee(){
+        String idEmployee = String.valueOf(faker.number().numberBetween(1,24));
+        return idEmployee;
+    }
+
+
 }
