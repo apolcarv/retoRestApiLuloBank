@@ -2,7 +2,7 @@
 Prueba API QA Automation - Ejercicio tecnico Api testing
 # IMPORTANTE
 * Las Apis no son del todo estables ya que son de pruebas (Dummy), por lo tanto la automatizacion
-  de estas apis no se le garantizan resultados exitosos, en cada vez que ejecute uno de los ruuners
+  de estas apis no se le garantizan resultados exitosos, cada vez que se ejecute uno de los ruuners
 * La libreria Hamcrest presenta problemas con algunas assert debido a que esta deprecada.
 # NOTA:
 * Se busca solucion para esta libreria pero no encontramos versiones estables. De lo contrario 
