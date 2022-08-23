@@ -13,7 +13,7 @@
      Entonces el servicio responde exitoso
 
    @DeleteEmployeeSuccessFul
-   Escenario: 002 - Se consume el servicio para consultar un empleado
+   Escenario: 002 - Se consume el servicio para eliminar un empleado
      Dado  que el usuario llama el servicio para eliminar un registro
      Cuando consume el servicio eliminar empleado
      Entonces valida que arroje resultado de busqueda de forma exitosa

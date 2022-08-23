@@ -14,7 +14,6 @@ import questions.delete.DeleteStatusQuestion;
 import tasks.delete.Call;
 import utils.data.DataFaker;
 import utils.enums.RestService;
-
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 

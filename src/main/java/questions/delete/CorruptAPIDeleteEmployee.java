@@ -9,7 +9,7 @@ import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeT
 public class CorruptAPIDeleteEmployee implements Question {
     @Override
     public Object answeredBy(Actor actor) {
-        actor.should(seeThatResponse(Constants.STATUS, response -> response.statusCode(Constants.RESPONSE_METHOD_NOT_ALLOWEB)));
+        actor.should(seeThatResponse(Constants.STATUS, response -> response.statusCode(Constants.RESPONSE_CODE_NOT_FOUND)));
         return true;
     }
 

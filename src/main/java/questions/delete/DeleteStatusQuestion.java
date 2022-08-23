@@ -3,7 +3,6 @@ package questions.delete;
 import helpers.Constants;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 
 public class DeleteStatusQuestion implements Question {
