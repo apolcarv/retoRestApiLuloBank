@@ -1,8 +1,14 @@
 # retoRestApiLuloBank
-
 Prueba API QA Automation - Ejercicio tecnico Api testing
-
-El stack técnico a utilizar es:
+# IMPORTANTE
+* Las Apis no son del todo estables ya que son de pruebas (Dummy), por lo tanto la automatizacion
+  de estas apis no se le garantizan resultados exitosos, en cada vez que ejecute uno de los ruuners
+* La libreria Hamcrest presenta problemas con algunas assert debido a que esta deprecada.
+# NOTA:
+* Se busca solucion para esta libreria pero no encontramos versiones estables. De lo contrario 
+  que generan mas conflitos con las aserciones que ya estan en codigo y funcionan, adicional no contaba 
+  con mas tiempo para buscar un solucion alterna.
+# El stack técnico a utilizar es:
 1. Maven para gestión de librerías.
 2. Java 8 o mayor.
 3. Serenity (última versión) con BDD Screenplay.
@@ -10,7 +16,6 @@ El stack técnico a utilizar es:
 5. Serenity Rest con Serenity y Screenplay
 6. Hamcrest
 7. Patron de diseño Screenplay utilizando la mayor cantidad de capas posibles
-
 
 1. El ejercicio consta de poder realizar interacciones por medio de los Verbos comunes
    que expone un Api rest y que puedas realizar todo el proceso que involucra
@@ -22,7 +27,6 @@ El stack técnico a utilizar es:
    resaltar que dentro de la interacción que puedas realizar con los Endpoint expuestos
    es necesario que realices validaciones sobre las respuestas que puedas obtener al
    realizar cada una de las acciones.
-
 
 * Crear un escenario de prueba por cada endpoint donde se todas las validaciones
   necesarias a las diferentes respuestas de la petición
