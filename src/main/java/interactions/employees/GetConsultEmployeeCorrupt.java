@@ -15,10 +15,10 @@ public class GetConsultEmployeeCorrupt implements Interaction {
     private EnvironmentVariables environmentVariables;
     private static final String LOG_CLASE = "GetConsultEmployeeCorrupt -> ";
     private static final String MENSAJE_GENERAL = "El servicio Corrupto se consumio de forma exitosa";
-    private final String resource;
+    private final String resources;
 
-    public GetConsultEmployeeCorrupt(String resource) {
-        this.resource = resource;
+    public GetConsultEmployeeCorrupt(String resources) {
+        this.resources = resources;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class GetConsultEmployeeCorrupt implements Interaction {
         String theRestApiBaseUrlCorrupt = theRestApiBaseUrl+"v0";
         actor.whoCan(CallAnApi.at(theRestApiBaseUrlCorrupt));
         actor.attemptsTo(
-                Get.resource(resource)
+                Get.resource(resources)
                         .with(requestSpecification -> requestSpecification
                                 .accept("application/json, text/plain, */*")
                                 .relaxedHTTPSValidation()
@@ -40,8 +40,8 @@ public class GetConsultEmployeeCorrupt implements Interaction {
         ManagerLog.imprimirMensaje(Constants.SEPARADOR_LINEAL);
         ManagerLog.imprimirExito(LOG_CLASE+MENSAJE_GENERAL);
     }
-    public static GetConsultEmployeeCorrupt service (String resource){
-        return Tasks.instrumented(GetConsultEmployeeCorrupt.class,resource);
+    public static GetConsultEmployeeCorrupt service (String resources){
+        return Tasks.instrumented(GetConsultEmployeeCorrupt.class,resources);
     }
 }
 

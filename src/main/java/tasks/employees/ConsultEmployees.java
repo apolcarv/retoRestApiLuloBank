@@ -7,10 +7,10 @@ import net.serenitybdd.screenplay.Task;
 
 public class ConsultEmployees {
 
-    public Performable ConsultEmployees (String resource){
-        return Task.where("{0} call the ConsultEmployees service", GetConsultEmployees.service(resource));
+    public Performable consultEmployees (String resources){
+        return Task.where("{0} call the consultEmployees service", GetConsultEmployees.service(resources));
     }
-    public Performable ConsultEmployeesEndpointCorrupt (String resource){
-        return Task.where("{0} call the ConsultEmployees service", GetConsultEmployeeCorrupt.service(resource));
+    public Performable consultEmployeesEndpointCorrupt (String resources){
+        return Task.where("{0} call the consultEmployeesEndpointCorrupt service", GetConsultEmployeeCorrupt.service(resources));
     }
 }

@@ -8,13 +8,11 @@ import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.thucydides.core.annotations.Managed;
 import questions.employees.ConsultEmployeesQuestion;
 import questions.employees.CorruptAPIConsultEmployeesQuestion;
 import questions.employees.FieldConsultEmployeesQuestion;
 import tasks.employees.Call;
-import utils.RestService;
-
+import utils.enums.RestService;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -31,15 +29,15 @@ public class EmployeesStepDefinition {
     }
     @Cuando("consume el servicio consulta de empleado")
     public void llamaElServicioConsultaDeEmpleado() {
-        OnStage.theActorCalled(Constants.MR_ROBOT).attemptsTo(Call.service().ConsultEmployees(RestService.EMPLOYEES.getUri()));
+        OnStage.theActorCalled(Constants.MR_ROBOT).attemptsTo(Call.service().consultEmployees(RestService.EMPLOYEES.getUri()));
     }
     @Cuando("consume el servicio corrupto consulta de empleado")
     public void consumeElServicioCorruptoConsultaDeEmpleado() {
-        OnStage.theActorCalled(Constants.MR_ROBOT).attemptsTo(Call.service().ConsultEmployeesEndpointCorrupt(RestService.EMPLOYEES.getUri()));
+        OnStage.theActorCalled(Constants.MR_ROBOT).attemptsTo(Call.service().consultEmployeesEndpointCorrupt(RestService.EMPLOYEES.getUri()));
     }
     @Entonces("el servicio responde de forma exitosa")
     public void elServicioRespondeDeFormaExitosa() {
-        theActorInTheSpotlight().should(seeThat(ConsultEmployeesQuestion.confirmEstatusSuccessFul()));
+        theActorInTheSpotlight().should(seeThat(ConsultEmployeesQuestion.confirmStatusSuccessFul()));
     }
 
     @Entonces("valida que arroje resultados de busqueda de forma exitosa")

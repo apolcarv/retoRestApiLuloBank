@@ -4,7 +4,7 @@
   #Email: alejandropolocarvajal@gmail.com
   #sitio: https://www.linkedin.com/in/alejandro-polo-carvajal-790b79186/
 
- Característica: Ejecucion completa de los casos de pruebas RETO TECNICO LULOBANK de las Dummy api example
+ Característica: Ejecucion completa de los casos de pruebas RETO TECNICO LULOBANK de las Dummy api example (Employees)
 
    @EmployeesSuccess
    Escenario: 001 - Consume el servicio para validar codigo de respuesta

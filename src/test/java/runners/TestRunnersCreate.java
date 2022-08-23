@@ -5,9 +5,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @CucumberOptions(
-        features = {"src/test/resources/feature/employees.feature"},
+        features = {"src/test/resources/feature/create.feature"},
         glue = "stepDefinitions",
-        /** tags = "@EmployeesFail", */
+        /** tags = "@CreateFail",*/
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {"html:target/cucumber-html-report", "json:target/cucumber-json-report.json" }
 )

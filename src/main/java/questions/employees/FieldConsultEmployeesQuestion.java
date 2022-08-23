@@ -2,7 +2,7 @@ package questions.employees;
 
 import com.github.javafaker.Faker;
 import helpers.Constants;
-import helpers.DataFaker;
+import utils.data.DataFaker;
 import helpers.ManagerLog;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
@@ -16,7 +16,7 @@ public class FieldConsultEmployeesQuestion implements Question {
     @Override
     public Object answeredBy(Actor actor) {
         int id  = faker.number().numberBetween(1,24);
-        String employee_name = DataFaker.generarNombreParaBusqueda().get(0);
+        String employee_name = DataFaker.generarNombre().get(0);
         actor.should(seeThatResponse(Constants.REGYSTER_NUMBER,
                 response -> response.body("data.id", hasItems(id))));
         actor.should(seeThatResponse(Constants.EMPLOYEE_NAME,
